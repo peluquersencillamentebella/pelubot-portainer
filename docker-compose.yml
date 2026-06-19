@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  peluqueria-bot:
+    build:
+      context: https://github.com/TU_USUARIO/peluqueria-bot.git
+      dockerfile: Dockerfile
+    container_name: peluqueria-bot
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - bot-data:/app/data
+      - bot-auth:/app/auth_info
+    environment:
+      - NODE_ENV=production
+      - DATA_DIR=/app/data
+      - AUTH_DIR=/app/auth_info
+      - GOOGLE_CREDENTIALS=PEGA_AQUI_EL_CONTENIDO_MINIFICADO_DE_credentials.json
+      - GOOGLE_TOKEN=PEGA_AQUI_EL_CONTENIDO_MINIFICADO_DE_token.json
+
+volumes:
+  bot-data:
+  bot-auth:
