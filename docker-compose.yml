@@ -3,7 +3,7 @@ version: "3.9"
 services:
   peluqueria-bot:
     build:
-      context: https://github.com/TU_USUARIO/peluqueria-bot.git
+      context: https://github.com/peluquersencillamentebella/peluqueria-bot.git
       dockerfile: Dockerfile
     container_name: peluqueria-bot
     restart: unless-stopped
